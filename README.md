@@ -101,6 +101,26 @@ airflow dags trigger s3_snowflake_elt_pipeline
 Open `snowflake_transformations.sql` in Snowflake worksheet and execute layer by layer.
 
 ---
+---
+
+## Project Methodology
+
+**Requirement Gathering**
+- Defined pipeline business requirements before implementation: data sources, transformation rules, quality thresholds, and Gold layer output schema
+- Documented Bronze/Silver/Gold layer specifications and KPI logic rules as formal requirements
+- Identified data quality requirements: null rate thresholds (5%), deduplication rules, cross-source reconciliation logic
+
+**Agile / DevOps Workflow**
+- Followed iterative development cycles: built and validated Bronze ingestion first, then Silver transformation, then Gold aggregation
+- Implemented CI/CD pipeline using GitHub Actions — every commit triggers automated validation
+- Used version-controlled, environment-variable-driven config to support reproducible builds across environments
+
+**Business Requirements Addressed**
+- Zero invalid records reaching the Gold analytics layer
+- Automated data quality enforcement replacing manual validation checks
+- Infrastructure fully reproducible via single Terraform command for any environment
+
+---
 
 ## Skills Demonstrated
 - **ELT / Lakehouse patterns** — Bronze → Silver → Gold architecture in Snowflake
