@@ -121,7 +121,6 @@ Open `snowflake_transformations.sql` in Snowflake worksheet and execute layer by
 - Infrastructure fully reproducible via single Terraform command for any environment
 
 ---
-
 ## Skills Demonstrated
 - **ELT / Lakehouse patterns** — Bronze → Silver → Gold architecture in Snowflake
 - **AWS** — S3 ingestion with boto3, Airflow MWAA-compatible DAG
